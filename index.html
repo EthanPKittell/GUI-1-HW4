@@ -1,0 +1,74 @@
+<!-- 
+Name: Ethan Kittell
+Email: Ethan_Kittell@student.uml.edu
+
+This HTML file has a form to create a table with
+and a placeholder for the multiplication table
+to be put in.
+
+New code for HW4 contains a space for tabs and a tab deletion button
+
+For my sources I used many w3 schools pages for html that I do not remember
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--links for css, javascript, and jquery-->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <link href=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/multTable.js"></script>
+    <title>Dynamic Mult Table</title>
+</head>
+<body>
+   <!--Elements for the project title-->
+    <h1>DYNAMIC MULTIPLICATION TABLE</h1>
+
+    <hr>
+
+    <div id = "TBL"> </div>
+        <!--fieldset to have a legend around the border-->
+        <fieldset class="tableForm" ><legend>Enter values to generate a multiplication table</legend>
+            <!--form to submit the values used to create the multiplication table
+            on submit set to return false in order for the page to not be reloaded-->
+            <form id="tableFormForm" method="get" onsubmit="return false">
+            <label for="minCol">Minimum Column Value (-50 - 50):</label><br>
+            <input type="text" id="minCol" name="minCol" value="0"><br>
+            <div id="slider"></div>
+            <label for="maxCol">Maximum Column Value (-50 - 50):</label><br>
+            <input type="text" id="maxCol" name="maxCol" value="0"><br>
+            <div id="slider2"></div>
+            <label for="minRow">Minimum Row Value (-50 - 50):</label><br>
+            <input type="text" id="minRow" name="minRow" value="0"><br>
+            <div id="slider3"></div>
+            <label for="maxRow">Maximum Row Value (-50 - 50):</label><br>
+            <input type="text" id="maxRow" name="maxRow" value="0"><br>
+            <div id="slider4"></div><br>
+            <input type="submit" value="Save Table" onclick="createTabs()">
+            </form>
+            <p>*all input is rounded down (ex: 0.5 = 0)*</p>
+        </fieldset>
+        
+        <!--elements to display an error message with javascript when need and a place
+        to make the table when needed-->
+        <h1 id = "errorMessage"></h1>
+        <div id = "placeHolder"></div>
+        <!--button for destroying all saved tables-->
+        <button type="button" onclick="deleteTabs()">Delete All Saved Tables</button>
+        <!--div for visually representing the tabs with HTML-->
+        <div id="tabs">
+            <ul>
+              
+            </ul>
+            
+            </div>
+        </div>
+        
+</body>
+</html>
