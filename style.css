@@ -1,0 +1,180 @@
+/*
+Name: Ethan Kittell
+Email: Ethan_Kittell@student.uml.edu
+
+This css allows for a border around the form, different
+coloring and sizing for the text and error message
+the css also allows for the multiplication table to be
+displayed reasonably when its too big for the screen
+with a scrollable container
+
+For my sources I used many w3 schools pages for css that I do not remember
+
+I did not change this file since HW3
+*/
+
+/*
+styles the form to be readable and to the left of the
+multiplication table when the screen is at medium size
+*/
+.tableForm {
+    border: 100px solid;
+    border-width: 1px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: fit-content;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #594545;
+    float: left;
+
+    margin-left: 40px;
+    
+}
+
+legend {
+    font-weight: bold;
+}
+/*
+styles the h1 title to be easily readable
+*/
+h1 {
+    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #594545;
+    
+}
+/*
+makes the error message animate and red to
+be extremely noticable and easy to understand
+*/
+#errorMessage {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: red;
+
+    animation: errorMessageAnm 2s ease infinite;
+}
+@keyframes errorMessageAnm{
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.1, 1.1);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+hr {
+    margin-bottom: 20px;
+}
+
+/*
+styling for the borders of all the table elements
+*/
+table td
+{
+    padding: 15px;
+    border: solid #815B5B;
+    color: #594545;
+    border-width: 1px 6px 6px 1px;
+}
+
+tr {
+    background-color: #eeeee4;
+}
+
+table {
+    margin: auto;
+   
+}
+body {
+    background-color: #FFF8EA;
+}
+/*
+changes the row color in the multiplication table for increased
+readability
+*/
+tbody>:nth-child(2n)
+{
+    background-color: #dfdac5;
+}
+
+/*
+makes both headers a different color and have a set position in
+the scrollable container 
+*/
+tbody>tr>:nth-child(1){ 
+    background-color:#eab676;
+    font-weight: bold;
+    position: sticky;
+    left: 0;
+    
+}
+
+tbody>:nth-child(1){
+    position: sticky;
+    top: 0;
+    background-color:#eab676;
+    font-weight: bold;
+    z-index: 1;
+
+}
+
+/*
+multiplication table container with scrollbar
+*/
+#placeHolder 
+{
+    width: 600px;
+    height: 560px;
+    overflow:auto;
+    margin: auto;
+}
+
+#minCol-error {
+    margin-top: 10px;
+    display: block;
+    color: red;
+    border: double red 4px;
+}
+
+#maxCol-error {
+    margin-top: 10px;
+    display: block;
+    color: red;
+    border: double red 4px;
+}
+
+#minRow-error {
+    margin-top: 10px;
+    display: block;
+    color: red;
+    border: double red 4px;
+}
+
+#maxRow-error {
+    margin-top: 10px;
+    display: block;
+    color: red;
+    border: double red 4px;
+}
+
+div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div#tabs > div {
+    width: 600px;
+    height: 560px;
+    overflow:auto;
+    margin: auto;
+}
